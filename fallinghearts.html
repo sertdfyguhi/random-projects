@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>falling hearts</title>
+</head>
+<style>
+  @keyframes fall {
+    to {
+      transform: translateY(105vh);
+    }
+  }
+  
+  .ha {
+    position: fixed;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear;
+  }
+</style>
+<body>
+  <script>
+    function create()
+    {
+      let h = document.createElement("p");
+      h.innerHTML = '❤️';
+      h.style.left = Math.random() * 100 + 'vw';
+      h.classList.add('ha');
+      document.body.appendChild(h);
+      setTimeout(() => {
+        h.remove();
+      }, 3000)
+    }
+
+    setInterval(create, 300);
+  </script>
+</body>
+</html>
