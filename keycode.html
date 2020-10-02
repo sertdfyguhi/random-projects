@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript keycodes</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    div {
+      background-color: rgb(23, 23, 23);
+      color: white;
+      border-radius: 10px;
+      width: 200px;
+      height: 85px;
+    }
+    div h2 {
+      position: relative;
+      top: -32px;
+    }
+    div h4 {
+      position: relative;
+      top: -18px;
+    }
+  </style>
+  <body
+    style="
+      font-family: Poppins;
+      text-align: center;
+      position: relative;
+      top: 80px;
+    "
+  >
+    <h1
+      style="
+        background-color: rgba(128, 128, 128, 0.264);
+        position: relative;
+        top: 220px;
+      "
+      id="start"
+    >
+      Press any key to show their keycode info
+    </h1>
+    <h1
+      id="key"
+      style="font-size: 250px; font-weight: 100; display: inline"
+    ></h1>
+    <br />
+    <div style="display: none" id="eventwhichcontainer">
+      <h4 style="font-weight: 50">event.which</h4>
+      <h2 id="eventwhich"></h2>
+    </div>
+    <div style="display: none" id="eventlocationcontainer">
+      <h4 style="font-weight: 50">event.location</h4>
+      <h2 id="eventlocation"></h2>
+    </div>
+    <div style="display: none" id="eventkeycontainer">
+      <h4 style="font-weight: 50">event.key</h4>
+      <h2 id="eventkey"></h2>
+    </div>
+    <div style="display: none" id="eventcodecontainer">
+      <h4 style="font-weight: 50">event.code</h4>
+      <h2 id="eventcode"></h2>
+    </div>
+    <script>
+      document.addEventListener('keydown', function (event) {
+        document.getElementById('key').innerHTML = event.which
+        document.getElementById('eventwhich').innerHTML = event.which
+        document.getElementById('eventcode').innerHTML = event.code
+        if (event.key == ' ') {
+          document.getElementById('eventkey').innerHTML = 'Space'
+        } else {
+          document.getElementById('eventkey').innerHTML = event.key
+        }
+        document.getElementById('eventlocation').innerHTML = event.location
+        document.getElementById('eventwhichcontainer').style.display =
+          'inline-block'
+        document.getElementById('eventkeycontainer').style.display =
+          'inline-block'
+        document.getElementById('eventlocationcontainer').style.display =
+          'inline-block'
+        document.getElementById('eventcodecontainer').style.display =
+          'inline-block'
+        document.getElementById('start').style.display = 'none'
+      })
+    </script>
+  </body>
+</html>
