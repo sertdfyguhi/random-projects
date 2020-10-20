@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random number generator</title>
+</head>
+<body style="text-align: center; font-family: Arial, Helvetica, sans-serif;">
+  <h1>Random number generator</h1>
+  <input type="number" placeholder="Minimum" id="min">
+  <input type="number" placeholder="Maximum" id="max">
+  <button onclick="genRandomNum()">Generate</button>
+  <h3 id="output"></h3>
+  <script>
+    function genRandomNum() {
+      let min = parseInt(document.getElementById('min').value);
+      let max = parseInt(document.getElementById('max').value);
+      document.getElementById('output').innerHTML = Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  </script>
+</body>
+</html>
