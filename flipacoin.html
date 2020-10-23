@@ -9,14 +9,19 @@
 <body style="text-align: center; font-family: Work Sans;">
   <h1>Flip a coin!</h1>
   <h3 id="output">&nbsp</h3>
-  <button onclick="flipcoin()">Flip the coin</button>
+  <button oncick="flipcoin()">Flip the coin</button>
   <script>
     function flipcoin() {
+      let easteregg = Math.floor(Math.random() * 10000);
       let number = Math.floor(Math.random() * 2);
-      if (number == 1) {
-        document.getElementById('output').innerHTML = 'Heads';
+      if (easteregg == 5246) {
+        document.getElementById('output').innerHTML = 'Congratulations! You got the 1 out of 10000 chance easter egg! Your coin landed standing straight up!';
       }else {
-        document.getElementById('output').innerHTML = 'Tails';
+        if (number == 1) {
+          document.getElementById('output').innerHTML = 'Heads';
+        }else {
+          document.getElementById('output').innerHTML = 'Tails';
+        }
       }
     }
   </script>
