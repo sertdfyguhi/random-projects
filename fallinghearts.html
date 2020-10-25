@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>falling hearts</title>
+</head>
+<style>
+  @keyframes fall {
+    to {
+      transform: translateY(105vh);
+    }
+  }
+  
+  .ha {
+    position: fixed;
+    top: -1vh;
+    transform: translateY(0);
+    animation: fall 3s linear;
+  }
+</style>
+<body>
+  <h4>Press c to change text</h4>
+  <input type="checkbox" id="d">
+  <label for="d">dark mode</label>
+  <script>
+    let a = '❤️';
+    function create()
+    {
+      let h = document.createElement("p");
+      h.innerHTML = a;
+      h.style.left = Math.random() * 100 + 'vw';
+      h.classList.add('ha');
+      document.body.appendChild(h);
+      setTimeout(() => {
+        h.remove();
+      }, 3000)
+    }
+    document.addEventListener("keydown", function(event){
+      if (event.keyCode == 67) {
+        a = prompt('Change falling text', '❤️')
+      }
+    })
+    setInterval(function(){
+      if (document.getElementById('d').checked == true) {
+        document.body.style.color = 'white';
+        document.body.style.backgroundColor = 'rgb(23, 23, 23)';
+      }else {
+        document.body.style.color = 'black';
+        document.body.style.backgroundColor = 'white';
+      }
+    }, 1)
+    setInterval(create, 300);
+  </script>
+</body>
+</html>

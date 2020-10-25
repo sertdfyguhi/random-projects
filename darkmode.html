@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dark mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Poppins;">
+  <h4>Dark mode</h4>
+  <h4>Click toggle dark mode to switch to dark mode on this page</h4>
+  <h4>Here's a sentence: The green tea and avocado smoothie turned out exactly as would be expected.</h4>
+  <input type="checkbox" name="h" id="h" style="position: absolute; top: 162px; left: 650px;">
+  <label for="h" style="font-size: 15px; position: absolute; top: 159px; left: 670px;">Toggle dark mode</label>
+  <script>
+    function change()
+    {
+      let h = document.getElementById('h').checked;
+      if (h == true) {
+        document.body.style.backgroundColor = 'rgb(33, 33, 33)';
+        document.body.style.color = 'white';
+      }
+      if (h == false) {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = 'black';
+      }
+    }
+    setInterval(change, 10);
+  </script>
+</body>
+</html>

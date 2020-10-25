@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip a coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Work Sans;">
+  <h1>Flip a coin!</h1>
+  <h3 id="output">&nbsp</h3>
+  <button oncick="flipcoin()">Flip the coin</button>
+  <script>
+    function flipcoin() {
+      let easteregg = Math.floor(Math.random() * 10000);
+      let number = Math.floor(Math.random() * 2);
+      if (easteregg == 5246) {
+        document.getElementById('output').innerHTML = 'Congratulations! You got the 1 out of 10000 chance easter egg! Your coin landed standing straight up!';
+      }else {
+        if (number == 1) {
+          document.getElementById('output').innerHTML = 'Heads';
+        }else {
+          document.getElementById('output').innerHTML = 'Tails';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

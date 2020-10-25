@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>password generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    background-color: red;
+    transition: background-color 5s;
+    text-align: center;
+    font-family: 'Open Sans';
+  }
+</style>
+<body>
+  <h4 style="background-color: white;" id="f">password</h4>
+  <input type="number" id="l" placeholder="pass length">
+  <button onclick="hj()">generate</button>
+  <script>
+
+    let a = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%&';
+    function gen() 
+    {
+      let l = document.getElementById('l').value;
+      let s = '';
+      for (var i = 0; i < l; i++)
+      {
+        s += a[Math.floor(Math.random() * a.length)];
+      }
+      return s;
+    }
+
+    function hj()
+    {
+      document.getElementById('f').innerHTML = gen();
+    }
+
+    var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+    var i = 1;
+
+    window.setInterval(function(){
+      document.body.style.backgroundColor = colors[i];
+      i++;
+      if (i === colors.length){
+        i=0;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound board</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+</head>
+<style>
+  body {
+    font-family: 'Baloo Tammudu 2';
+  }
+  button {
+    border: none;
+    border-radius: 4px;
+    background-color: lightskyblue;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+  }
+</style>
+<body style="text-align: center;">
+  <h1>Sound board</h1>
+  <button onclick="playaudio('sigh')">sigh</button>
+  <button onclick="playaudio('bark')">dog bark</button>
+  <button onclick="playaudio('applause')">applause</button>
+  <button onclick="playaudio('boo')">boo</button>
+  <button onclick="playaudio('ambulance')">ambulance</button>
+  <button onclick="playaudio('victory')">victory</button>
+  <script>
+    function playaudio(audio)
+    {
+      let a = new Audio('./sounds/' + audio + '.mp3');
+      a.play();
+    }
+  </script>
+</body>
+</html>

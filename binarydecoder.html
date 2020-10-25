@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>binary decoder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Noto Sans;">
+  <h1>Binary decoder</h1>
+  <input type="text" id="g" placeholder="binary">
+  <button style="border-radius: 3px; border: black;" onclick="decode();">decode</button>
+  <h3 id="r"></h3>
+  <script>
+    function d()
+    {
+      let binary = document.getElementById('g').value;
+
+      let outputStr = binary.split(' ') //Split string in array of binary chars
+        .map(bin => String.fromCharCode(parseInt(bin, 2))) //Map every binary char to real char
+        .join(''); 
+      
+      return outputStr;
+    }
+    function decode()
+    {
+      document.getElementById('r').innerHTML = d();
+    }
+  </script>
+</body>
+</html>
