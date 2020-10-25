@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random meal generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+</head>
+<body style="text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+  <h1 style="font-weight: 500;">Random meal generator</h1>
+  <a id="meallink" href=""><h3 id="mealname" style="font-weight: 300; margin: 0%;"></h3></a>
+  <a id="mealytlink" href=""><h3 id="mealyoutube" style="font-weight: 300; margin: 5px;"></h3></a>
+  <h4 id="mealplace" style="font-weight: 300; margin: 5px;"></h4>
+  <img id="mealimage" src="">
+  <br>
+  <button onclick="getMeal()">Generate meal</button>
+  <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+  <script>
+    async function getMeal() {
+      let { body } = await superagent.get('https://www.themealdb.com/api/json/v1/1/random.php');
+      document.getElementById('mealname').innerHTML = body.meals[0].strMeal;
+      document.getElementById('meallink').href = body.meals[0].strSource;
+      document.getElementById('mealimage').src = body.meals[0].strMealThumb;
+      document.getElementById('mealplace').innerHTML = body.meals[0].strArea;
+      document.getElementById('mealytlink').href = body.meals[0].strYoutube;
+      document.getElementById('mealyoutube').innerHTML = 'Youtube';
+    }
+  </script>
+</body>
+</html>
