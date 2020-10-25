@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>binary converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Source Sans Pro;">
+  <h1>Binary converter</h1>
+  <input type="text" id="g" placeholder="text">
+  <button style="border-radius: 3px; border: black;" onclick="convert();">convert</button>
+  <h3 id="r"></h3>
+  <script>
+    function hs() {
+      var output = document.getElementById("r");
+      var input = document.getElementById("g").value;
+      let a = '';
+      output.value = "";
+      for (var i = 0; i < input.length; i++) {
+          a += input[i].charCodeAt(0).toString(2) + " ";
+      }
+      return a;
+    }
+    function convert()
+    {
+      document.getElementById('r').innerHTML = hs();
+    }
+  </script>
+</body>
+</html>

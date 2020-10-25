@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Covid19 stats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Nunito;">
+  <h1>Total Covid19 cases</h1>
+  <h2 id="totalcases"></h2>
+  <h1>Total Covid19 deaths</h1>
+  <h2 id="totaldeaths"></h2>
+  <h1>Total Covid19 victims that recovered</h1>
+  <h2 id="totalrecovered"></h2>
+  <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+  <script>
+    async function gettotalcases()
+    {
+      let { body } = await superagent.get('https://api.covid19api.com/world/total');
+      document.getElementById('totalcases').innerHTML = body.TotalConfirmed;
+    }
+    async function gettotaldeaths()
+    {
+      let { body } = await superagent.get('https://api.covid19api.com/world/total');
+      document.getElementById('totaldeaths').innerHTML = body.TotalDeaths;
+    }
+    async function gettotalrecovered()
+    {
+      let { body } = await superagent.get('https://api.covid19api.com/world/total');
+      document.getElementById('totalrecovered').innerHTML = body.TotalRecovered;
+    }
+    gettotalrecovered();
+    gettotalcases();
+    gettotaldeaths();
+  </script>
+</body>
+</html>

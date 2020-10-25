@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>time</title>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Epilogue; text-align: center;">
+  <h1>Time</h1>
+  <h2 id="a"></h2>
+  <script>
+    function date()
+    {
+      let d = new Date;
+      document.getElementById('a').innerHTML = 'Year ' + d.getFullYear() + ', Month ' + d.getMonth() + ', Day in week ' + d.getDay() + ', Hour ' + d.getHours() + ', Minute ' + d.getMinutes() + ', Second ' + d.getSeconds();
+    }
+    date();
+    setInterval(date, 500)
+  </script>
+</body>
+</html>

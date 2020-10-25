@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Ubuntu; background-color: rgb(198, 198, 198);">
+  <h1>Text</h1>
+  <input type="text" id="y">
+  <h3 id="h"></h3>
+  <script>
+    let i = 0;
+    setInterval(function(){
+      let h = document.getElementById('y').value;
+      if (i > h.length) {
+        i = 0;
+      }else {
+        document.getElementById('h').innerHTML = h.slice(0, i);
+        i++;
+        console.log(i);
+      }
+    }, 140)
+  </script>
+</body>
+</html>

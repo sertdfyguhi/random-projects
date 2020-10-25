@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Open Sans;">
+  <h3>notes</h3>
+  <span contenteditable="true" style="background-color: rgba(103, 103, 103, 0.086); outline: none;" id="e">note</span>
+  <script>
+    function getCookie() {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; value=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    let c = getCookie();
+    if (c == '') {
+      document.getElementById('e').innerHTML = 'note';
+    }else {
+      document.getElementById('e').innerHTML = getCookie();
+    }
+    window.setInterval(function(){
+      document.cookie = ' value=' + document.getElementById('e').innerHTML + ';';
+    }, 100);
+  </script>
+</body>
+</html>

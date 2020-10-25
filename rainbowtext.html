@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rainbow text generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Nunito;">
+  <h1 id="q" style="color: red; transition: color 5s;">rainbow text generator</h1>
+  <input type="text" id="r">
+  <button onclick="d()">write</button>
+  <h2 id="t" style="color: red; transition: color 5s;"></h2>
+  <script>
+    function d()
+    {
+      document.getElementById('t').innerHTML = document.getElementById('r').value;
+    }
+    var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+    var i = 1;
+
+    window.setInterval(function(){
+      document.getElementById('t').style.color = colors[i];
+      document.getElementById('q').style.color = colors[i];
+      i++;
+      if (i === colors.length){
+        i=0;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
