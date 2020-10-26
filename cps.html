@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clicks per second test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Oxygen;">
+  <h1>Clicks per second test</h1>
+  <div id="show">
+    <input type="number" placeholder="seconds" id="seconds" style="width: 70px;" value="5">
+    <h4 style="display: inline;">second(s) test (default is 5 seconds)</h4>
+    <br>
+    <button onclick="starttest()">start</button>
+  </div>
+  <div id="hide" style="display: none;">
+    <button onclick="clicks++" style="width: 300px; height: 120px;">CLICK</button>
+  </div>
+  <div id="h" style="display: none;">
+    <h1 id="cps"></h1>
+    <button onclick="window.location.reload()">test again</button>
+  </div>
+  <script>
+    let seconds = parseInt(document.getElementById('seconds').value);
+    let clicks = 0;
+    let cps = 0;
+    function starttest() {
+      seconds = parseInt(document.getElementById('seconds').value);
+      document.getElementById('show').style.display = 'none';
+      document.getElementById('hide').style.display = 'block';
+      setTimeout(() => {
+        cps = clicks / seconds;
+        document.getElementById('hide').style.display = 'none';
+        document.getElementById('h').style.display = 'block';
+        document.getElementById('cps').innerHTML = 'Your cps is ' + cps;
+      }, seconds * 1000)
+    }
+  </script>
+</body>
+</html>
