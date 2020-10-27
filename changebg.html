@@ -7,9 +7,7 @@
 </head>
 <style>
   body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
   }
 
   .btn {
@@ -18,7 +16,7 @@
   }
 </style>
 <body>
-  <button class="btn" onclick="changebg()">change background color</button>
+  <button class="btn" onclick="color()">change background color</button>
   <script>
     function color()
     {
@@ -27,11 +25,7 @@
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
       }
-      return color;
-    }
-    function changebg()
-    {
-      document.body.style.backgroundColor = color();
+      document.body.style.backgroundColor = color;
     }
   </script>
 </body>
