@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacebar counter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body style="text-align: center; font-family: Roboto;">
+  <h1>Spacebar counter</h1>
+  <h2 id="show">You hit spacebar 0 times.</h2>
+  <button style="background: linear-gradient(315deg, #03ff63, #03bcff); border: 1px gray solid; border-radius: 5px; width: 130px; height: 40px; font-size: 15px; font-family: inherit;" onclick="restart()" onfocus="blur()">Restart</button>
+  <script>
+    let press = 0;
+    function restart() {
+      press = 0;
+      document.getElementById('show').innerHTML = 'You hit spacebar 0 times.';
+    }
+    document.addEventListener("keypress", function(e){
+      if (e.code == 'Space') {
+        press++;
+        document.getElementById('show').innerHTML = 'You hit spacebar ' + press + ' times.';
+      }
+    })
+  </script>
+</body>
+</html>
