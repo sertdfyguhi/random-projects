@@ -30,7 +30,7 @@
       document.getElementById('countdown').style.display = 'block';
       let a = 5;
       let t = setInterval(() => {
-        document.getElementById('countdown').innerHTML = a;
+        document.getElementById('countdown').innerText = a;
         a--;
       }, 1000)
       setTimeout(() => {
@@ -41,7 +41,7 @@
           cps = clicks / seconds;
           document.getElementById('hide').style.display = 'none';
           document.getElementById('h').style.display = 'block';
-          document.getElementById('cps').innerHTML = 'Your cps is ' + cps;
+          document.getElementById('cps').innerText = 'Your cps is ' + cps;
         }, seconds * 1000)
       }, 6000)
       

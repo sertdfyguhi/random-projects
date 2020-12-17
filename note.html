@@ -17,12 +17,12 @@
     }
     let c = getCookie();
     if (c == '') {
-      document.getElementById('e').innerHTML = 'note';
+      document.getElementById('e').innerText = 'note';
     }else {
-      document.getElementById('e').innerHTML = getCookie();
+      document.getElementById('e').innerText = getCookie();
     }
     window.setInterval(function(){
-      document.cookie = ' value=' + document.getElementById('e').innerHTML + ';';
+      document.cookie = ' value=' + document.getElementById('e').innerText + ';';
     }, 100);
   </script>
 </body>

@@ -15,12 +15,12 @@
       let easteregg = Math.floor(Math.random() * 10000);
       let number = Math.floor(Math.random() * 2);
       if (easteregg == 5246) {
-        document.getElementById('output').innerHTML = 'Congratulations! You got the 1 out of 10000 chance easter egg! Your coin landed standing straight up!';
+        document.getElementById('output').innerText = 'Congratulations! You got the 1 out of 10000 chance easter egg! Your coin landed standing straight up!';
       }else {
         if (number == 1) {
-          document.getElementById('output').innerHTML = 'Heads';
+          document.getElementById('output').innerText = 'Heads';
         }else {
-          document.getElementById('output').innerHTML = 'Tails';
+          document.getElementById('output').innerText = 'Tails';
         }
       }
     }

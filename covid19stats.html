@@ -18,17 +18,17 @@
     async function gettotalcases()
     {
       let { body } = await superagent.get('https://api.covid19api.com/world/total');
-      document.getElementById('totalcases').innerHTML = body.TotalConfirmed;
+      document.getElementById('totalcases').innerText = body.TotalConfirmed;
     }
     async function gettotaldeaths()
     {
       let { body } = await superagent.get('https://api.covid19api.com/world/total');
-      document.getElementById('totaldeaths').innerHTML = body.TotalDeaths;
+      document.getElementById('totaldeaths').innerText = body.TotalDeaths;
     }
     async function gettotalrecovered()
     {
       let { body } = await superagent.get('https://api.covid19api.com/world/total');
-      document.getElementById('totalrecovered').innerHTML = body.TotalRecovered;
+      document.getElementById('totalrecovered').innerText = body.TotalRecovered;
     }
     gettotalrecovered();
     gettotalcases();

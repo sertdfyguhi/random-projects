@@ -67,15 +67,15 @@
     </div>
     <script>
       document.addEventListener('keydown', function (event) {
-        document.getElementById('key').innerHTML = event.which
-        document.getElementById('eventwhich').innerHTML = event.which
-        document.getElementById('eventcode').innerHTML = event.code
+        document.getElementById('key').innerText = event.which
+        document.getElementById('eventwhich').innerText = event.which
+        document.getElementById('eventcode').innerText = event.code
         if (event.key == ' ') {
-          document.getElementById('eventkey').innerHTML = 'Space'
+          document.getElementById('eventkey').innerText = 'Space'
         } else {
-          document.getElementById('eventkey').innerHTML = event.key
+          document.getElementById('eventkey').innerText = event.key
         }
-        document.getElementById('eventlocation').innerHTML = event.location
+        document.getElementById('eventlocation').innerText = event.location
         document.getElementById('eventwhichcontainer').style.display =
           'inline-block'
         document.getElementById('eventkeycontainer').style.display =

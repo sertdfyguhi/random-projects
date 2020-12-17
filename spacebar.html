@@ -14,12 +14,12 @@
     let press = 0;
     function restart() {
       press = 0;
-      document.getElementById('show').innerHTML = 'You hit spacebar 0 times.';
+      document.getElementById('show').innerText = 'You hit spacebar 0 times.';
     }
     document.addEventListener("keypress", function(e){
       if (e.code == 'Space') {
         press++;
-        document.getElementById('show').innerHTML = 'You hit spacebar ' + press + ' times.';
+        document.getElementById('show').innerText = 'You hit spacebar ' + press + ' times.';
       }
     })
   </script>

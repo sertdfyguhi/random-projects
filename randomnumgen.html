@@ -15,7 +15,7 @@
     function genRandomNum() {
       let min = parseInt(document.getElementById('min').value);
       let max = parseInt(document.getElementById('max').value);
-      document.getElementById('output').innerHTML = Math.floor(Math.random() * (max - min + 1)) + min;
+      document.getElementById('output').innerText = Math.floor(Math.random() * (max - min + 1)) + min;
     }
   </script>
 </body>
